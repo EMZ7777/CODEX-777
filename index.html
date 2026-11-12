@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f6fb">
+    <title>Mes tâches — Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="app">
+      <header class="page-header">
+        <p class="eyebrow">Mon espace personnel</p>
+        <h1>Mes tâches</h1>
+        <p class="intro">Une petite étape à la fois. Organisez votre journée simplement.</p>
+      </header>
+
+      <section class="task-card" aria-labelledby="task-form-title">
+        <h2 id="task-form-title">Ajouter une tâche</h2>
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-input">Description de la tâche</label>
+          <input
+            id="task-input"
+            name="task"
+            type="text"
+            maxlength="160"
+            placeholder="Ex. Préparer le dîner"
+            autocomplete="off"
+            required
+          >
+          <button class="add-button" type="submit">
+            <span aria-hidden="true">+</span>
+            Ajouter
+          </button>
+        </form>
+
+        <p id="app-message" class="app-message" role="status" aria-live="polite"></p>
+
+        <div class="list-heading">
+          <h2>Ma liste</h2>
+          <p id="task-count" class="task-count" aria-live="polite">0 tâche</p>
+        </div>
+
+        <ul id="task-list" class="task-list" aria-label="Liste des tâches"></ul>
+        <p id="empty-state" class="empty-state">
+          Rien pour le moment. Ajoutez votre première tâche ci-dessus.
+        </p>
+      </section>
+
+      <footer class="page-footer">
+        Vos tâches sont enregistrées automatiquement dans ce navigateur.
+      </footer>
+    </main>
+  </body>
+</html>
